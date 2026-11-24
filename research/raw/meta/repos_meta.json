@@ -1,0 +1,33 @@
+{
+  "wwewtech/anti-slop-design": {
+    "full_name": "wwewtech/anti-slop-design",
+    "stargazers_count": 5,
+    "pushed_at": "2026-10-21",
+    "default_branch": "main",
+    "license": "MIT",
+    "language": null,
+    "description": "Anti-slop frontend & UI/UX engineering skill for AI agents. Cures vibe-coded software from AI design clich\u00e9s, enforces 1-to-3 UX hierarchy, tactile micro-interactions, and 7-axis pre-emit quality gating.",
+    "topics": [
+      "agent-skills",
+      "anti-slop",
+      "antigravity",
+      "awesome-claude-skills",
+      "awesome-skills",
+      "claude-code",
+      "cursor",
+      "design-system",
+      "frontend-design",
+      "landing-page",
+      "mobile",
+      "nextjs",
+      "react",
+      "saas-dashboard",
+      "skills-sh",
+      "tailwind-css",
+      "ui-ux",
+      "vibe-coding",
+      "web-design"
+    ],
+    "html_url": "https://github.com/wwewtech/anti-slop-design"
+  }
+}

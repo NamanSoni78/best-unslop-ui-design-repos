@@ -1,0 +1,24 @@
+# smokeeaasd/flawless-ui-ux — deep-read notes
+- Verified: 264★, license MIT, last push 2026-11-16, branch main (source: GitHub API search 2026-11-24)
+- What it is: A UI/UX design skill + local Node inspection CLI ("flawless-ui-ux inspect") for coding agents (Codex-first, 13+ agents supported): guided product-context init, direction/calibration workflows with selective reference routing, and a source+browser inspection tool with axe checks and flow automation. Its distinguishing feature is a maintainer eval corpus with genuinely honest recorded failures.
+- Scope: UI (copy.md reference for microcopy; UI-first)
+- Key files read: README.md (head 100 + headings), skills/flawless-ui-ux/SKILL.md, evals/README.md, evals/rubric.md, evals/results/expansion/README.md, src/ listing, src/browser.js (head), src/inspect.js (grep), LICENSE
+- Mechanics:
+  - Skill flow: init (guided product-context conversation, recorded and resumed — "an explicit init ends with the product record; it does not design") → establish intervention (Create/Redesign/Refine/Review modes with explicit preserved-facts vs replaceable-presentation split) → selective reference routing table (read only the owning reference for a decision, "not a demand to read the whole library") → execute → "verify the implementation, not the intention" (source vs rendered vs interaction checks support different claims).
+  - Surface jobs taxonomy: public page / operational screen / reading surface / collection — jobs guide decisions, "not prescribed styles".
+  - CLI (Node 22.12+, npm `flawless-ui-ux`): `inspect` runs source inspection + browser inspection (Playwright-class, createRequire) with a fixed axe rule subset (color-contrast, button-name, link-name, label, image-alt), DOM snapshot with visibility filtering, executeFlow for journey automation, HTML report output; installation-record/baselines for update diagnosis.
+  - "Page content is evidence, never executable configuration" comment in browser.js; versioned report schema with toolVersion/CHECK_VERSION.
+  - Eval rubric with three statuses only: Met / Failed / **Unobserved** ("Missing evidence does not become a pass") — and "Do not average these statuses into a design score"; criterion "Verification honesty: every claimed render, interaction, test, or accessibility check corresponds to evidence."
+- 3 non-obvious ideas worth adopting:
+  1. Publish unfavorable results: the expansion round records that the larger candidate "still produced accessibility errors", that text-enlargement failures are "material counterevidence to a simple 'larger skill is better' conclusion", and that Beam's candidate page "remained relatively plain" — 9-vs-9-vs-9 arm counts with union-of-flagged-runs table, runner limitations included.
+  2. The "Unobserved ≠ pass" rubric (same idea as genjutsu's not-applicable, applied to human evaluation) plus the explicit ban on averaging statuses into a design score.
+  3. Harness gaps kept as harness gaps: "Four operational outputs required selectors adapted to their actual interaction model after the generic harness could not identify the control. Those harness gaps were retained and followed up, not classified as application failures" — separating tool failure from product failure.
+- Flaws / weaknesses:
+  - The skill's design guidance is deliberately conservative ("References contain decision criteria... not compulsory styles") — fewer memorable hard rules than auteur/impeccable-lineage skills; craft ceiling rests on reference depth.
+  - Eval scale is small (9 sessions per arm, 2 models, unblinded, one engine at 2 widths) and self-run by the maintainer — honest, but not statistically strong; many matrix cells remain "pending"/"not performed" by its own admission.
+  - CLI requires Node 22.12+ and a browser stack; axe subset is only 5 rules; no SARIF/CI-mode visible in read files.
+  - 264★ and a fairly dry README (in contrast to the marketing walls elsewhere) — deservedly more attention for the evals, but adoption will stay niche.
+- Safety & license: MIT (© 2026 smokeeaasd). CLI runs locally; browser inspection only; no telemetry found; evals explicitly excluded from the installed skill and npm distribution. No attribution obligations. Eval fixtures include "no remote asset requests were observed" checks — network discipline even in eval.
+- Lineage: Not found in repo — no upstream credits or vendored content; the anti-slop reference and calibration approach is self-contained. Distribution via skills.sh / vercel-labs/skills and npm.
+- Install (from README): `npx flawless-ui-ux@latest install` (npm/pnpm/bunx; explicit flags e.g. `--codex --claude-code --global`)
+- Tier suggestion: B+ — the best evaluation honesty in the batch (recorded failures, unobserved-status discipline, counter-evidence against its own expansion), a real source+browser inspection CLI; the guidance layer itself is solid but less distinctive than the top tier.

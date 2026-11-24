@@ -1,0 +1,7 @@
+# Research snapshots (hundreds of MB of third-party tarballs) — never commit.
+research/raw/tarballs/
+*.tar.gz
+
+# Local tooling
+node_modules/
+.DS_Store
